@@ -1,5 +1,5 @@
 name=gawk
-version=5.0.1
+version=4.2.1
 source=(http://ftp.gnu.org/gnu/gawk/gawk-$version.tar.xz)
 
 build() {

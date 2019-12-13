@@ -1,5 +1,5 @@
 name=tar
-version=1.32
+version=1.30
 source=(http://ftp.gnu.org/gnu/tar/tar-$version.tar.xz)
 
 build() {
