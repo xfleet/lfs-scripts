@@ -55,12 +55,17 @@ build() {
 	RANLIB=$LFS_TGT-ranlib                             \
 	../configure $multilibopt                              \
 		--prefix=/tools                                \
+                --with-arch=$LFS_GCC_ARM_ARCH                  \
+                --with-fpu=$LFS_FPU                            \
+                --with-float=$LFS_FLOAT                        \
 		--with-local-prefix=/tools                     \
 		--with-native-system-header-dir=/tools/include \
 		--enable-languages=c,c++                       \
 		--disable-libstdcxx-pch                        \
 		--disable-bootstrap                            \
-		--disable-libgomp
+		--disable-libgomp			       \
+		--disable-libsanitizer			       \
+		--disable-libquadmath
 	make
 	make install
 	ln -sv gcc /tools/bin/cc
