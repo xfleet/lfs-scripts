@@ -1,0 +1,17 @@
+name=nss
+version=3.39
+source=(http://ftp.mozilla.org/pub/security/nss/releases/NSS_3_39_RTM/src/$name-$version.tar.gz)
+
+build() {
+	cd $name-$version
+	patch -Np1 -i $PATCHDIR/nss-3.38-standalone-1.patch
+
+	cd $name
+	make \
+		VERBOSE=1 BUILD_OPT=1 \
+		NSPR_INCLUDE_DIR=/tools/include/nspr \
+		USE_SYSTEM_ZLIB=1 \
+		ZLIB_LIBS=-lz \
+		$([ -f /tools/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)
+	make install
+}

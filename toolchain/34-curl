@@ -7,6 +7,7 @@ build() {
 	./configure --prefix=/tools            \
                     --disable-static           \
                     --enable-threaded-resolver \
+		    --without-zlib \
                     --with-ca-bundle=/tools/etc/ssl/certs/ca-certificates.crt
         make
         make DESTDIR=$PKG install
