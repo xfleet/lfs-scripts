@@ -164,9 +164,9 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib file readline m4 
 ##echo "==> Copying ports"
 ##cp -Ra ports/* $LFS/usr/ports/
 #
-mountbind_cache
+#mountbind_cache
 
-openchroot
+#openchroot
 #
 #for pkg in $PKGS; do
 #	case $pkg in
@@ -174,7 +174,7 @@ openchroot
 #		*) runinchroot pkgin -i $pkg || die;;
 #	esac
 #done
-
+umount_pseudo
 umountbind_cache
 
 exit 0
