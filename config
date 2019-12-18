@@ -11,7 +11,7 @@ TCDIR=$CWD/toolchain
 SRCDIR=$CWD/sources
 PATCHDIR=$CWD/patches
 FILEDIR=$CWD/files
-WORKDIR=/media/usb1/tmp
+WORKDIR=/tmp
 
 LABEL=LFSLIVECD
 OUTPUT=lfs-livecd-$(date +"%Y%m%d")
