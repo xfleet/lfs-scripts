@@ -31,9 +31,6 @@ build() {
 		  --prefix=/tools                    \
 		  --host=$LFS_TGT                    \
 		  --build=$(../scripts/config.guess) \
-		  --with-arch=$LFS_ARM_ARCH \
-		  --with-fpu=$LFS_FPU \
-		  --with-float=$LFS_FLOAT \
 		  --enable-kernel=3.2             \
 		  --with-headers=/tools/include
 	make

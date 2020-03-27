@@ -48,9 +48,6 @@ build() {
 
 	../configure $multilibopt                              \
 		--target=$LFS_TGT                              \
-		--with-arch=$LFS_GCC_ARM_ARCH                  \
-		--with-fpu=$LFS_FPU                            \
-		--with-float=$LFS_FLOAT                        \
 		--prefix=/tools                                \
 		--with-glibc-version=2.11                      \
 		--with-sysroot=$LFS                            \
