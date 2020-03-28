@@ -1,5 +1,5 @@
 name=gcc
-version=7.3.0
+version=8.2.0
 gmp_version=6.1.2
 mpc_version=1.1.0
 mpfr_version=4.0.1
@@ -59,6 +59,7 @@ build() {
 		--with-native-system-header-dir=/tools/include \
 		--enable-languages=c,c++                       \
 		--disable-libstdcxx-pch                        \
+                --disable-multilib                             \
 		--disable-bootstrap                            \
 		--disable-libgomp
 	make

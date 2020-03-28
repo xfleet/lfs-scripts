@@ -1,5 +1,5 @@
 name=gcc
-version=7.3.0
+version=8.2.0
 gmp_version=6.1.2
 mpc_version=1.1.0
 mpfr_version=4.0.1
@@ -46,6 +46,7 @@ build() {
 	mkdir -v build
 	cd       build
 
+	if [ "$MULTILIB" = "yes" ]; then
 	../configure $multilibopt                              \
 		--target=$LFS_TGT                              \
 		--prefix=/tools                                \
@@ -67,6 +68,30 @@ build() {
 		--disable-libvtv                               \
 		--disable-libstdcxx                            \
 		--enable-languages=c,c++
+        else
+	../configure $multilibopt                              \
+		--target=$LFS_TGT                              \
+		--prefix=/tools                                \
+		--with-glibc-version=2.11                      \
+		--with-sysroot=$LFS                            \
+		--with-newlib                                  \
+		--without-headers                              \
+		--with-local-prefix=/tools                     \
+		--with-native-system-header-dir=/tools/include \
+		--disable-nls                                  \
+		--disable-shared                               \
+		--disable-multilib                             \
+		--disable-decimal-float                        \
+		--disable-threads                              \
+		--disable-libatomic                            \
+		--disable-libgomp                              \
+		--disable-libmpx                               \
+		--disable-libquadmath                          \
+		--disable-libssp                               \
+		--disable-libvtv                               \
+		--disable-libstdcxx                            \
+		--enable-languages=c,c++
+        fi
 	make
 	make install
 }
