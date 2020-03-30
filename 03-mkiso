@@ -53,7 +53,7 @@ CWD=$PWD
 
 source $CWD/config
 
-isolinux_files="chain.c32 isolinux.bin ldlinux.c32 libutil.c32 reboot.c32 menu.c32 libcom32.c32 poweroff.c32"
+isolinux_files="chain.c32 ldlinux.c32 libutil.c32 reboot.c32 menu.c32 libcom32.c32 poweroff.c32"
 
 OUTPUT=$OUTPUT.iso
 
@@ -63,8 +63,9 @@ mkdir -p $WDIR
 printstep "Preparing isolinux files..."
 mkdir -p $WDIR/{lfs,isolinux,boot}
 for file in $isolinux_files; do
-	cp /usr/share/syslinux/$file $WDIR/isolinux
+	cp /usr/lib/syslinux/modules/bios/$file $WDIR/isolinux
 done
+cp /usr/lib/ISOLINUX/isolinux.bin $WDIR/isolinux
 #cp isolinux/splash.png $WDIR/isolinux
 cp $FILEDIR/isolinux.cfg $WDIR/isolinux
 [ -d rootfs ] && cp -Ra rootfs $WDIR
