@@ -29,6 +29,11 @@ build() {
 
 	cp  arch/x86/boot/bzImage $PKG/boot/vmlinuz-lfs
 	echo $kernver > $PKG/lib/modules/KERNELVERSION
+ 
+        cp -iv System.map $PKG/boot/System.map-$version
+        cp -iv .config $PKG/boot/config-$version
+        install -d $PKG/usr/share/doc/linux-$version
+        cp -r Documentation/* $PKG/usr/share/doc/linux-$version
 
 	make clean
 	make prepare
