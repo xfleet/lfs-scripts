@@ -84,7 +84,7 @@ cp $LFS/boot/vmlinuz-lfs $WDIR/boot/vmlinuz || die "failed copying kernel"
 cp files/livecd.hook $LFS/etc/mkinitramfs.d
 kernver=$(file $LFS/boot/vmlinuz-lfs | cut -d ' ' -f9)
 chroot_run mkinitramfs -k $kernver -a livecd -o /boot/initrd-lfs.img || die "failed create initramfs"
-mv $LFS/boot/initrd-lfs.img $WDIR/boot/initrd || die "failed copying initrd"
+cp $LFS/boot/initrd-lfs.img $WDIR/boot/initrd || die "failed copying initrd"
 
 printstep "Setup UEFI mode..."
 mkdir -p $WDIR/boot/{grub/{fonts,x86_64-efi},EFI}
