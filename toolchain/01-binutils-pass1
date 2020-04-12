@@ -16,12 +16,15 @@ build() {
 	
 	../configure $multilibopt \
 		--prefix=/tools \
+        --with-lib-path=/tools/lib \
 		--with-sysroot=$LFS \
 		--target=$LFS_TGT \
 		--disable-nls \
 		--disable-werror
 	make
-	mkdir -v /tools/lib && ln -sv lib /tools/lib64
+        case $(uname -m) in
+         x86_64) mkdir -v /tools/lib && ln -sv lib /tools/lib64 ;;
+        esac
 	[ "$MULTILIB" = "yes" ] && mkdir -p /tools/lib32
 	make install
 }
