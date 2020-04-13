@@ -146,7 +146,7 @@ f:9fce94dfc3661303c9df50feb99fb53d:make/Pkgfile
 f:dac6de1c8d1f3ae29da9d3cc9d79f106:p11-kit/Pkgfile
 f:59609811f647ff063a820bd4413fb04f:lzo/Pkgfile
 f:6b6ad8a03037a751f580ceecec6a393e:squashfs-tools/Pkgfile
-f:347e044c1c9dab725b6c241de486e637:linux/config-4.19.66
+f:347e044c1c9dab725b6c241de486e637:linux/config-4.19.114
 f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
 f:6346ee810a00bb25bd41178b0be6c87d:linux/Pkgfile
 f:71cb7e398d0cf7e9716cbc34c2deac64:iana-etc/Pkgfile
