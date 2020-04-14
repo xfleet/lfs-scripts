@@ -104,17 +104,6 @@ runinchroot() {
 	return $retval
 }
 
-openchroot() {
-	mount_pseudo
-        cp -L /etc/resolv.conf $LFS/etc/
-        chroot "$LFS" $ENVLFS -i \
-            HOME=/root                  \
-            TERM="$TERM"                \
-            PS1='(lfs chroot) \u:\w\$ ' \
-            PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
-	    SHELL=/bin/bash /bin/bash --login +h
-}
-
 interrupted() {
 	die "script $(basename $0) aborted!"
 }
@@ -155,25 +144,23 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib file readline m4 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl ports httpup gpm libevent links"
 
-#if [ ! -f $LFS/var/lib/pkg/db ]; then
-#	lfs_dirs
-#fi
-#	
-#mkdir -p $LFS/usr/ports/
-#runinchroot ports -u || die
-##echo "==> Copying ports"
-##cp -Ra ports/* $LFS/usr/ports/
-#
+if [ ! -f $LFS/var/lib/pkg/db ]; then
+	lfs_dirs
+fi
+	
+mkdir -p $LFS/usr/ports/
+runinchroot ports -u || die
+#echo "==> Copying ports"
+#cp -Ra ports/* $LFS/usr/ports/
+
 mountbind_cache
 
-openchroot
-#
-#for pkg in $PKGS; do
-#	case $pkg in
-#		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
-#		*) runinchroot pkgin -i $pkg || die;;
-#	esac
-#done
+for pkg in $PKGS; do
+	case $pkg in
+		filesystem|gcc|bash|perl|coreutils) runinchroot pkgin -i -ic $pkg || die;;
+		*) runinchroot pkgin -i $pkg || die;;
+	esac
+done
 
 umountbind_cache
 

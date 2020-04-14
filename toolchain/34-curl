@@ -1,14 +1,12 @@
 name=curl
-version=7.61.1
+version=7.66.0
 source=(https://curl.haxx.se/download/$name-$version.tar.xz)
 
 build() {
-        export LD_LIBRARY_PATH=/tools/lib:/lib:/usr/lib
 	cd $name-$version
 	./configure --prefix=/tools            \
                     --disable-static           \
                     --enable-threaded-resolver \
-		    --without-zlib \
                     --with-ca-bundle=/tools/etc/ssl/certs/ca-certificates.crt
         make
         make DESTDIR=$PKG install
