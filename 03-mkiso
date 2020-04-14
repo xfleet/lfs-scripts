@@ -53,7 +53,7 @@ CWD=$PWD
 
 source $CWD/config
 
-isolinux_files="chain.c32 isolinux.bin ldlinux.c32 libutil.c32 reboot.c32 menu.c32 libcom32.c32 poweroff.c32"
+isolinux_files="chain.c32 ldlinux.c32 libutil.c32 reboot.c32 menu.c32 libcom32.c32 poweroff.c32"
 
 OUTPUT=$OUTPUT.iso
 
@@ -63,8 +63,9 @@ mkdir -p $WDIR
 printstep "Preparing isolinux files..."
 mkdir -p $WDIR/{lfs,isolinux,boot}
 for file in $isolinux_files; do
-	cp /usr/share/syslinux/$file $WDIR/isolinux
+	cp /usr/lib/syslinux/modules/bios/$file $WDIR/isolinux
 done
+cp /usr/lib/ISOLINUX/isolinux.bin $WDIR/isolinux
 #cp isolinux/splash.png $WDIR/isolinux
 cp $FILEDIR/isolinux.cfg $WDIR/isolinux
 [ -d rootfs ] && cp -Ra rootfs $WDIR
@@ -83,7 +84,7 @@ cp $LFS/boot/vmlinuz-lfs $WDIR/boot/vmlinuz || die "failed copying kernel"
 cp files/livecd.hook $LFS/etc/mkinitramfs.d
 kernver=$(file $LFS/boot/vmlinuz-lfs | cut -d ' ' -f9)
 chroot_run mkinitramfs -k $kernver -a livecd -o /boot/initrd-lfs.img || die "failed create initramfs"
-mv $LFS/boot/initrd-lfs.img $WDIR/boot/initrd || die "failed copying initrd"
+cp $LFS/boot/initrd-lfs.img $WDIR/boot/initrd || die "failed copying initrd"
 
 printstep "Setup UEFI mode..."
 mkdir -p $WDIR/boot/{grub/{fonts,x86_64-efi},EFI}
@@ -98,6 +99,7 @@ cp -a /usr/lib/grub/x86_64-efi/*.{mod,lst} $WDIR/boot/grub/x86_64-efi || die "Fa
 cp $FILEDIR/grub.cfg $WDIR/boot/grub/
 
 grub-mkimage -c $WDIR/boot/grub-early.cfg -o $WDIR/boot/EFI/bootx64.efi -O x86_64-efi -p "" iso9660 normal search search_fs_file
+PATH=$PATH:/usr/sbin
 modprobe loop
 dd if=/dev/zero of=$WDIR/boot/efiboot.img count=4096
 mkdosfs -n LFSLIVECD-UEFI $WDIR/boot/efiboot.img || die "Failed mkdosfs"
@@ -111,7 +113,7 @@ rm -fr $WDIR/boot/efiboot
 printstep "Making the iso..."
 rm -f $OUTPUT
 xorriso -as mkisofs \
-    -isohybrid-mbr /usr/share/syslinux/isohdpfx.bin \
+    -isohybrid-mbr /usr/lib/ISOLINUX/isohdpfx.bin \
     -c isolinux/boot.cat \
     -b isolinux/isolinux.bin \
       -no-emul-boot \
