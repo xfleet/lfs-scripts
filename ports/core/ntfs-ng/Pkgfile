@@ -1,0 +1,16 @@
+# Description: Data compression library
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
+
+name=ntfs-ng
+version=2017.3.23
+release=1
+source=(https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+        make
+        make DESTDIR=$PKG install
+}
