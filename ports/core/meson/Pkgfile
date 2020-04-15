@@ -6,7 +6,8 @@
 name=meson
 version=0.54.0
 release=1
-source=(https://github.com/mesonbuild/meson/releases/download/0.54.0/meson-0.54.0.tar.gz)
+source=(https://github.com/mesonbuild/meson/archive/0.54.0.tar.gz)
+
 
 build() {
 	cd $name-$version
