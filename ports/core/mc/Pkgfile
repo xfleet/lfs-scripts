@@ -1,0 +1,16 @@
+# Description: Data compression library
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
+
+name=mc
+version=4.8.24
+release=1
+source=(https://github.com/MidnightCommander/mc/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+	./configure --prefix=/usr
+        make
+        make DESTDIR=$PKG install
+}
