@@ -1,0 +1,21 @@
+# Description: Data compression library
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
+
+name=ninja
+version=1.10.0
+release=1
+source=(https://github.com/ninja-build/ninja/releases/download/v$version/ninja-linux.zip)
+
+build() {
+	cd $name-$version
+
+python3 configure.py --bootstrap
+
+install -vm755 ninja /usr/bin/
+install -vDm644 misc/bash-completion /usr/share/bash-completion/completions/ninja
+install -vDm644 misc/zsh-completion  /usr/share/zsh/site-functions/_ninja
+
+
+}
