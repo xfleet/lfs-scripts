@@ -6,7 +6,7 @@
 name=mc
 version=4.8.24
 release=1
-source=(https://github.com/MidnightCommander/mc/archive/$version.tar.gz)
+source=(http://ftp.midnight-commander.org/mc-$version.tar.xz)
 
 build() {
 	cd $name-$version
