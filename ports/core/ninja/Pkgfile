@@ -6,7 +6,7 @@
 name=ninja
 version=1.10.0
 release=1
-source=(https://github.com/ninja-build/ninja/releases/download/v$version/ninja-linux.zip)
+source=(https://github.com/ninja-build/ninja/archive/v1.10.0.tar.gz)
 
 build() {
 	cd $name-$version
