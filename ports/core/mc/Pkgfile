@@ -10,7 +10,13 @@ source=(http://ftp.midnight-commander.org/mc-$version.tar.xz)
 
 build() {
 	cd $name-$version
-	./configure --prefix=/usr
+
+	./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --enable-charset
+
         make
+
         make DESTDIR=$PKG install
+
 }
