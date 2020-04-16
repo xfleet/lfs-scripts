@@ -9,15 +9,17 @@ release=1
 source=(https://tuxera.com/opensource/ntfs-3g_ntfsprogs-$version.tgz)
 
 build() {
-	cd $name-$version
+	cd ntfs-3g_ntfsprogs-$version
 	./configure --prefix=/usr \
           --disable-static     \
           --with-fuse=internal
 
         make
+        mkdir ../../pkg/lib
+
         make DESTDIR=$PKG install
 
-        ln -sv ../bin/ntfs-3g /sbin/mount.ntfs
+        #ln -sv ../bin/ntfs-3g /sbin/mount.ntfs
         ln -sv ntfs-3g.8 /usr/share/man/man8/mount.ntfs.8
 
 }
