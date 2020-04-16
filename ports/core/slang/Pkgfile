@@ -16,27 +16,11 @@ build() {
             --with-readline=gnu
 make -j1
 
-pwd
-ls -lR ../..
+DESTDIR=$PKG make -j1 install_doc_dir=$PKG/usr/share/doc/slang-2.3.2   \
+     SLSH_DOC_DIR=$PKG/usr/share/doc/slang-2.3.2/slsh \
+     install-all
 
-mkdir -p $PKG/usr/share/slsh/rline
-mkdir -p $PKG/usr/share/slsh/scripts
-mkdir -p $PKG/usr/share/slsh/help
-mkdir -p $PKG/usr/share/doc/slsh/html/
-mkdir -p $PKG/etc
-
-#DESTDIR=$PKG make install_doc_dir=$PKG/usr/share/doc/slang-2.3.2   \
-#     SLSH_DOC_DIR=$PKG/usr/share/doc/slang-2.3.2/slsh \
-#     install-all
-
-rm -rf /tmp/$name
-DESTDIR=$PKG make -j1 install-all || (cp -r ../../../$name /tmp; exit 1)
-read -p "Enter"
-
-#chmod -v 755 $PKG/usr/lib/libslang.so.2.3.2 \
-#             $PKG/usr/lib/slang/v2/modules/*.so
-
-pwd
-ls -lR $PKG
+chmod -v 755 $PKG/usr/lib/libslang.so.2.3.2 \
+             $PKG/usr/lib/slang/v2/modules/*.so
  
 }
