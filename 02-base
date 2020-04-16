@@ -144,7 +144,7 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib file readline m4 
 	wget pkgutils libnl dbus libxml2 dhcpcd wpa_supplicant lzo lz4 squashfs-tools popt efivar pciutils efibootmgr libpng which freetype2 dosfstools grub-efi
 	curl ports httpup gpm libevent links
         ntfs-ng 
-        meson ninja glib mc"
+	meson ninja glib slang mc"
 
 if [ ! -f $LFS/var/lib/pkg/db ]; then
 	lfs_dirs
