@@ -21,9 +21,11 @@ build() {
         cd    build
 
         meson --prefix=/usr      \
-              -Dman=true         \
+              -Dman=false        \
               -Dselinux=disabled \
               ..                 
         ninja
+
+        DESTDIR=$PKG ninja install
  
 }
