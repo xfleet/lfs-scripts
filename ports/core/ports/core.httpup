@@ -3,6 +3,6 @@
 #
 
 ROOT_DIR=/usr/ports/core
-URL=https://raw.githubusercontent.com/xfleet/lfs-scripts/Branch_v1/ports/core/
+URL=https://raw.githubusercontent.com/xfleet/lfs-scripts/br_5.4/ports/core/
 
 # End of file
