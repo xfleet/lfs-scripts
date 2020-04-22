@@ -1,6 +1,6 @@
 name=flex
 version=2.6.4
-source=(http://ftp.gnu.org/gnu/flex/flex-$version.tar.xz)
+source=(https://github.com/westes/flex/files/981163/flex-$version.tar.gz)
 
 build() {
 	cd $name-$version
