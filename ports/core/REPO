@@ -101,6 +101,13 @@ d:mpfr
 d:diffutils
 d:efibootmgr
 d:ca-certificates
+d:ntfs-ng
+d:pcre
+d:meson
+d:ninja
+d:glib
+d:slang
+d:mc
 f:418b0634dd451096ad0423a6f23dc949:links/Pkgfile
 f:55ef7288b6122e918c7d157da7b41684:vim/Pkgfile
 f:11dda64f9abdb1ff85c295f15b74d0ed:fuse2/Pkgfile
@@ -249,3 +256,11 @@ f:5b001980c1413e9f1a23af35c1a63e7f:mpfr/Pkgfile
 f:056cb42370ebe43d18e1878008b032f8:diffutils/Pkgfile
 f:2c84e38c869eb688f5328bfefd098e7d:efibootmgr/Pkgfile
 f:19d17dbd744677ba34c6bf8c60d81da9:ca-certificates/Pkgfile
+f:00000000000000000000000000000000:ntfs-ng/Pkgfile
+f:00000000000000000000000000000000:pcre/Pkgfile
+f:00000000000000000000000000000000:meson/Pkgfile
+f:00000000000000000000000000000000:ninja/Pkgfile
+f:00000000000000000000000000000000:glib/Pkgfile
+f:00000000000000000000000000000000:slang/Pkgfile
+f:00000000000000000000000000000000:mc/Pkgfile
+
