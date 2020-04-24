@@ -268,4 +268,7 @@ f:b051a5f7fef432d4d2431b73da4064f0:dhcp/Pkgfile
 f:157549658aba092b0d26aa1df3943051:dhcp/default-config.diff
 f:d668fba757e27f197729972750f89859:dhcp/dhclient
 f:3d6b3dbd3cabb0efcfada56cd3e6c0a4:dhcp/dhcpd
-
+d:libnl
+f:00000000000000000000000000000000:libnl/Pkgfile
+d:iw
+f:00000000000000000000000000000000:iw/Pkgfile
