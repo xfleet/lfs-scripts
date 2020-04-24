@@ -145,7 +145,7 @@ PKGS="filesystem linux-api-headers man-pages glibc tzdata zlib file readline m4 
 	curl ports httpup gpm libevent links
         ntfs-ng
 	pcre meson ninja glib slang mc
-	dhcp iw"
+	dhcp iw git wireless-tools"
 
 if [ ! -f $LFS/var/lib/pkg/db ]; then
 	lfs_dirs
