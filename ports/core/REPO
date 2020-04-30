@@ -160,7 +160,7 @@ f:6b6ad8a03037a751f580ceecec6a393e:squashfs-tools/Pkgfile
 f:575e3258212df25ae32cbaf3de5a2058:linux-api-headers/Pkgfile
 f:5b00d333a6d59025611bfe12e1a99f34:linux-firmware/Pkgfile
 f:c46f7f9df86fbd0c21c4b5de56c46ecf:linux/Pkgfile
-f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.7
+f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.8
 f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
 f:71cb7e398d0cf7e9716cbc34c2deac64:iana-etc/Pkgfile
 f:100529075ed8c45dfb1ad4c677c427d1:findutils/Pkgfile
