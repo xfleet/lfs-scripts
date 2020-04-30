@@ -157,9 +157,9 @@ f:9fce94dfc3661303c9df50feb99fb53d:make/Pkgfile
 f:dac6de1c8d1f3ae29da9d3cc9d79f106:p11-kit/Pkgfile
 f:59609811f647ff063a820bd4413fb04f:lzo/Pkgfile
 f:6b6ad8a03037a751f580ceecec6a393e:squashfs-tools/Pkgfile
-f:575e3258212df25ae32cbaf3de5a2058:linux-api-headers/Pkgfile
+f:117986cdc12c246570bfae927c8ce053:linux-api-headers/Pkgfile
 f:5b00d333a6d59025611bfe12e1a99f34:linux-firmware/Pkgfile
-f:c46f7f9df86fbd0c21c4b5de56c46ecf:linux/Pkgfile
+f:5ac64714089eb9acb480bb5c486c3b30:linux/Pkgfile
 f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.8
 f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
 f:71cb7e398d0cf7e9716cbc34c2deac64:iana-etc/Pkgfile
