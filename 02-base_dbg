@@ -98,7 +98,7 @@ runinchroot() {
 	    TERM="$TERM"                \
 	    PS1='(lfs chroot) \u:\w\$ ' \
 	    PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \
-	    ( $@ 2>&1 && RETVAL=$? || RETVAL=$? ) | tee $LFS/log/ports/${!#}-`date +"%Y%m%d-%H%M"`.log
+	    ( $@ && RETVAL=$? || RETVAL=$? ) 2>&1 | tee $LFS/log/ports/${!#}-`date +"%Y%m%d-%H%M"`.log
 	retval=$RETVAL
 	umount_pseudo
 	popd &>/dev/null
