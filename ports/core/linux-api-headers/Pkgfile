@@ -11,9 +11,11 @@ source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
 build() {
         cd linux-$version
 
-        make mrproper
+        mkdir -p dest/include
 
-make INSTALL_HDR_PATH=dest headers
+        make mrproper
+	make INSTALL_HDR_PATH=dest headers
+
 find usr/include -name '.*' -delete
 rm usr/include/Makefile
 mkdir -p $PKG/usr/include
