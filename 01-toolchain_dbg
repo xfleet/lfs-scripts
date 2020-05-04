@@ -54,7 +54,7 @@ extract_src() {
 build_src() {
 	cd $WORKDIR/$name
 	if [ "$(type -t build)" = function ]; then
-		(set -e -x; build 2>&1 |tee $LFS/log/toolchain/$name-$version-`date +"%Y%m%d-%H%M"`.log)
+		set -e -x; build $LFS/log/toolchain/$name-$version-`date +"%Y%m%d-%H%M"`.log 2>&1
 	fi
 	if [ $? -ne 0 ]; then
 		echo "!!! build $name-$version failed !!!"
