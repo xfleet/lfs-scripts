@@ -29,6 +29,6 @@ build() {
     ln -sf ../../lib/libhistory.so.${version:0:3} $PKG/usr/lib/libhistory.so
     ln -sf ../../lib/libreadline.so.${version:0:3} $PKG/usr/lib/libreadline.so
 
-    install -D -m 644 $SRC/inputrc $PKG/etc/inputrc
+    #install -D -m 644 $SRC/inputrc $PKG/etc/inputrc
     rm -r $PKG/usr/share/{doc,info}
 }
