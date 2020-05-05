@@ -260,7 +260,7 @@ f:12f9bc8db37eaf542021566c0f41ae2a:procps-ng/Pkgfile
 f:25a8ac86bfa8e9b3c9e0445db6f1cd9b:psmisc/Pkgfile
 f:460f553070b857d1d264c62007bcff78:python3/Pkgfile
 f:1a244f44e4263191acc02ccfdb35aab3:python3/Pkgfile
-f:10fc0e06d8b8ab3a5a0cded426450de9:readline/Pkgfile
+f:7966c895ecb76016ce2987b6603b825a:readline/Pkgfile
 f:8d5c7c038879f255f42147c43b1fa1d3:readline/readline-8.0.4.patch.gz
 f:e6b5603dc416ee91ba8432e012d6bf1a:sed/Pkgfile
 f:78d08e30877214cd8cf7bcc55a830217:sed/Pkgfile
