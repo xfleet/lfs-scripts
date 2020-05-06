@@ -221,7 +221,7 @@ f:117986cdc12c246570bfae927c8ce053:linux-api-headers/Pkgfile
 f:d41d8cd98f00b204e9800998ecf8427e:linux-firmware/.nostrip
 f:5b00d333a6d59025611bfe12e1a99f34:linux-firmware/Pkgfile
 f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
-f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.10
+f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.11
 f:5ac64714089eb9acb480bb5c486c3b30:linux/Pkgfile
 f:afa0a689a5162193fb54fefeaf15168a:lz4/Pkgfile
 f:59609811f647ff063a820bd4413fb04f:lzo/Pkgfile
