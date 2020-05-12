@@ -5,7 +5,7 @@
 
 name=gpm
 version=1.20.7
-bootscriptsversion=20191025
+bootscriptsversion=20200404
 release=1
 source=(https://www.nico.schottelius.org/software/gpm/archives/$name-$version.tar.bz2
 	http://www.linuxfromscratch.org/patches/blfs/svn/gpm-$version-glibc_2.26-1.patch

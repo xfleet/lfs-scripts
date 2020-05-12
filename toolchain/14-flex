@@ -1,0 +1,11 @@
+name=flex
+version=2.6.4
+source=(https://github.com/westes/flex/files/981163/flex-$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	./configure --prefix=/tools
+	make
+	make install
+}

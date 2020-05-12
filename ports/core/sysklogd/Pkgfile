@@ -1,35 +1,34 @@
-# Description: Logging system messages, such as those given by the kernel
-# URL:         http://www.infodrom.org/projects/sysklogd/
-# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
-# Depends on:  
+# Description: Kernel and system logging daemons
+# URL:         https://github.com/troglobit/sysklogd
+# Maintainer:  CRUX System Team, core-ports at crux dot nu
 
 name=sysklogd
-version=1.5.1
+version=2.1.2
 release=1
-source=(http://www.infodrom.org/projects/$name/download/$name-$version.tar.gz)
+source=(https://github.com/troglobit/sysklogd/releases/download/v$version/$name-$version.tar.gz \
+        rotatelog syslog syslog.conf sysklogd)
 
 build() {
-        cd $name-$version
+    cd $name-$version
 
-        sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
-        sed -i 's/union wait/int/' syslogd.c
+    ./configure \
+        --prefix=/usr \
+        --sysconfdir=/etc \
+        --localstatedir=/var \
+        --without-logger \
 
-        mkdir -p $PKG/{sbin,etc,usr/share/man/man{5,8}}
+    make
+    make DESTDIR=$PKG install
 
-        make
-        make BINDIR=$PKG/sbin MANDIR=$PKG/usr/share/man install
+    install -d $PKG/etc/{cron/weekly,rc.d,syslog.d}
+    install -m 755 $SRC/rotatelog $PKG/usr/sbin
+    install -m 755 $SRC/syslog $PKG/etc/cron/weekly
+    install -m 644 $SRC/syslog.conf $PKG/etc
+    install -m 755 $SRC/sysklogd $PKG/etc/rc.d
 
-        cat > $PKG/etc/syslog.conf << "EOF"
-# Begin /etc/syslog.conf
+    install -d $PKG/var/log
+    touch $PKG/var/log/{messages,auth,mail,cron,kernel,debug}
+    chmod 640 $PKG/var/log/{messages,auth,mail,cron,kernel,debug}
 
-auth,authpriv.* -/var/log/auth.log
-*.*;auth,authpriv.none -/var/log/sys.log
-daemon.* -/var/log/daemon.log
-kern.* -/var/log/kern.log
-mail.* -/var/log/mail.log
-user.* -/var/log/user.log
-*.emerg *
-
-# End /etc/syslog.conf
-EOF
+    rm -r $PKG/usr/share/doc
 }

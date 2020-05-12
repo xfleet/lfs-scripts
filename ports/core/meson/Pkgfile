@@ -1,0 +1,20 @@
+# Description: Data compression library
+# URL:         
+# Maintainer:  Emmett1, emmett1 dot 2miligrams at gmail dot com
+# Depends on:  
+
+name=meson
+version=0.54.0
+release=1
+source=(https://github.com/mesonbuild/meson/archive/0.54.0.tar.gz)
+
+
+build() {
+	cd $name-$version
+
+        python3 setup.py build
+
+        python3 setup.py install --root=$PKG
+        #cp -rv dest/* /
+ 
+}

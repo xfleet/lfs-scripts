@@ -4,9 +4,9 @@
 # Depends on:  elfutils mkinitramfs openssl linux-firmware
 
 name=linux
-version=4.19.114
+version=5.6.12
 release=1
-source=(https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-$version.tar.xz
+source=(https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
         config-$version)
 
 build() {
