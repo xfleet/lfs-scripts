@@ -4,9 +4,10 @@
 # Depends on:  
 
 name=linux-api-headers
-version=5.6.12
+version=5.7-rc5
 release=1
-source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
+#source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
+source=(https://git.kernel.org/torvalds/t/linux-$version.tar.gz)
 
 build() {
         cd linux-$version
