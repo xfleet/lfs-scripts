@@ -1,12 +1,12 @@
 name=gcc
-version=9.3.0
+version=10.1.0
+mpfr_version=4.0.2
 gmp_version=6.2.0
 mpc_version=1.1.0
-mpfr_version=4.0.2
 source=(http://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz
+	http://www.mpfr.org/mpfr-$mpfr_version/mpfr-$mpfr_version.tar.xz
 	http://ftp.gnu.org/gnu/gmp/gmp-$gmp_version.tar.xz
-	https://ftp.gnu.org/gnu/mpc/mpc-$mpc_version.tar.gz
-	http://www.mpfr.org/mpfr-$mpfr_version/mpfr-$mpfr_version.tar.xz)
+	https://ftp.gnu.org/gnu/mpc/mpc-$mpc_version.tar.gz)
 
 build() {
 	if [ "$MULTILIB" = "yes" ]; then
@@ -61,7 +61,6 @@ build() {
 		--disable-threads                              \
 		--disable-libatomic                            \
 		--disable-libgomp                              \
-		--disable-libmpx                               \
 		--disable-libquadmath                          \
 		--disable-libssp                               \
 		--disable-libvtv                               \

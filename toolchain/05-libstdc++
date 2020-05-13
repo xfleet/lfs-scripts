@@ -1,5 +1,5 @@
 name=gcc
-version=9.3.0
+version=10.1.0
 source=(http://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz)
 
 build() {
@@ -15,7 +15,6 @@ build() {
 		--libdir=/tools/lib32           \
 		--disable-multilib              \
 		--disable-nls                   \
-		--disable-libstdcxx-threads     \
 		--disable-libstdcxx-pch         \
 		--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/$version \
 		CC="$LFS_TGT-gcc -m32"          \
@@ -33,7 +32,6 @@ build() {
 		--prefix=/tools                 \
 		--disable-multilib              \
 		--disable-nls                   \
-		--disable-libstdcxx-threads     \
 		--disable-libstdcxx-pch         \
 		--with-gxx-include-dir=/tools/$LFS_TGT/include/c++/$version
 	make

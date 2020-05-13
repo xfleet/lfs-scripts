@@ -1,12 +1,12 @@
 name=gcc
-version=9.3.0
+version=10.1.0
+mpfr_version=4.0.2
 gmp_version=6.2.0
 mpc_version=1.1.0
-mpfr_version=4.0.2
 source=(http://ftp.gnu.org/gnu/gcc/gcc-$version/gcc-$version.tar.xz
+	http://www.mpfr.org/mpfr-$mpfr_version/mpfr-$mpfr_version.tar.xz
 	http://ftp.gnu.org/gnu/gmp/gmp-$gmp_version.tar.xz
-	https://ftp.gnu.org/gnu/mpc/mpc-$mpc_version.tar.gz
-	http://www.mpfr.org/mpfr-$mpfr_version/mpfr-$mpfr_version.tar.xz)
+	https://ftp.gnu.org/gnu/mpc/mpc-$mpc_version.tar.gz)
 
 build() {
 	if [ "$MULTILIB" = "yes" ]; then
@@ -21,8 +21,8 @@ build() {
 	mv -v ../gmp-$gmp_version gmp
 	mv -v ../mpc-$mpc_version mpc
 	
-	cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
-		`dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
+#	cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+#		`dirname $($LFS_TGT-gcc -print-libgcc-file-name)`/include-fixed/limits.h
 		
 	for file in gcc/config/{linux,i386/linux{,64}}.h
 	do
