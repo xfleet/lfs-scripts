@@ -31,10 +31,10 @@ build() {
 	             --with-system-zlib
 	make
 
-ulimit -s 32768
-chown -Rv nobody . 
-su nobody -s /bin/bash -c "PATH=$PATH make -k check"
-../contrib/test_summary
+#ulimit -s 32768
+#chown -Rv nobody . 
+#su nobody -s /bin/bash -c "PATH=$PATH make -k check"
+#../contrib/test_summary
 
 	make -j1 DESTDIR=$PKG install
 
