@@ -214,12 +214,12 @@ f:22a9ef47bf7cd10096d13358939955c1:libtasn1/Pkgfile
 f:9f86719223b265621b2244bf4e474009:libtool/Pkgfile
 f:9523079f72ff7bf4a6da84a8275e23a1:libxml2/Pkgfile
 f:418b0634dd451096ad0423a6f23dc949:links/Pkgfile
-f:dae0598cab7cb13d9bbb0e33326c0375:linux-api-headers/Pkgfile
+f:d99ec146e99d74a5deffeef176c71951:linux-api-headers/Pkgfile
 f:d41d8cd98f00b204e9800998ecf8427e:linux-firmware/.nostrip
 f:5b00d333a6d59025611bfe12e1a99f34:linux-firmware/Pkgfile
 f:d41d8cd98f00b204e9800998ecf8427e:linux/.nostrip
-f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.13
-f:4689a62c65d46a1d3f4ba345bd1e103a:linux/Pkgfile
+f:b6f7f3eec3b40a4dba4d4903de15053f:linux/config-5.6.14
+f:fe16e275e17deb382141b5e578c399fb:linux/Pkgfile
 f:afa0a689a5162193fb54fefeaf15168a:lz4/Pkgfile
 f:59609811f647ff063a820bd4413fb04f:lzo/Pkgfile
 f:088372ad592ace780c8ebbe060784bcc:m4/Pkgfile
