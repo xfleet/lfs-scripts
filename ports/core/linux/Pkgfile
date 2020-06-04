@@ -68,6 +68,7 @@ build() {
 		[ "$i" = "objtool" ] || rm -fr tools/objtool/$i
 	done
 
+        ls -alr $PKG/lib/modules
 	rm $PKG/lib/modules/$kernver/{build,source}
 	mv $SRC/linux-$version $PKG/lib/modules/$kernver/build
 	ln -sv build $PKG/lib/modules/$kernver/source
