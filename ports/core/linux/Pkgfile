@@ -4,10 +4,9 @@
 # Depends on:  elfutils mkinitramfs openssl linux-firmware
 
 name=linux
-version=5.7
+version=5.7.1
 release=1
-#source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz)
-source=(https://git.kernel.org/torvalds/t/linux-$version.tar.gz
+source=(https://www.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
         config-$version)
 
 build() {
@@ -20,7 +19,7 @@ build() {
 	sed '/^CONFIG_LOCALVERSION=/d' -i .config
 	echo 'CONFIG_LOCALVERSION="-LFS"' >> .config
 
-	kernver=${version}.0$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
+	kernver=${version}$(grep CONFIG_LOCALVERSION= .config | cut -d '"' -f2)
 
 	#make menuconfig
 	make bzImage modules
