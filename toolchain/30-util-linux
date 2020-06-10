@@ -1,5 +1,5 @@
 name=util-linux
-version=2.35.1
+version=2.35.2
 source=(https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.35/util-linux-$version.tar.xz)
 
 build() {
