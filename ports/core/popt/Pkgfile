@@ -4,7 +4,7 @@
 # Depends on:  
 
 name=popt
-version=1.16
+version=1.18
 release=1
 source=(http://ftp.rpm.org/mirror/$name/$name-$version.tar.gz)
 

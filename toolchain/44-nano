@@ -1,5 +1,5 @@
 name=nano
-version=4.9.3
+version=5.0
 source=(https://www.nano-editor.org/dist/v${version::1}/nano-$version.tar.xz)
 
 build() {
